@@ -37,12 +37,15 @@ To evaluate the quality of the representations learned by DCGANs for supervised 
 1. The input of generator will be 100 dimensional white noise, which will be passed through a feed forward layer, the output will be reshaped to (4,4,1024).
 2. The output of the discriminator will be flattened out and then passed through a feed forward layer, the output will have 2 as its dimension, this will passed to a softmax.
 
-**DCGAN**
 ![](dcgan_generator.png)
+
+
 
 ## Training Loop
 
 ![](training_loop.png)
+
+
 
 ### Discriminator Training:
 
