@@ -20,17 +20,17 @@ This repository contains a Python implementation of the DCGAN model introduced i
 4. Remove fully connected hidden layers for deeper architectures.
 5. Use ReLU activation in generator for all layers except for the output, which uses Tanh.
 6. Use LeakyReLU activation in the discriminator for all layers.
-7. We trained DCGANs on three datasets, Large-scale Scene Understanding (LSUN) (Yu et al., 2015), Imagenet-1k and a newly assembled Faces dataset
-	 1. We train a model on the LSUN bedrooms dataset,No data augmentation was applied to the images. (https://huggingface.co/datasets/pcuenq/lsun-bedrooms/tree/main/data)
-	 2. No pre-processing was applied to training images besides scaling to the range of the tanh activation function [-1, 1]. 
-	 3. All models were trained with mini-batch stochastic gradient descent (SGD) with a mini-batch size of 128. 
-	 4. All weights were initialized from a zero-centered Normal distribution with standard deviation 0.02. 
-	 5. In the LeakyReLU, the slope of the leak was set to 0.2 in all models.
-	 6. we used the Adam optimizer (Kingma & Ba, 2014) with tuned hyperparameters, learning rate  0.0002 .
-	 7. Additionally, momentum term β1=0.5 helped stabilize training.
+
+
+	 1. No pre-processing was applied to training images besides scaling to the range of the tanh activation function [-1, 1]. 
+	 2. All models were trained with mini-batch stochastic gradient descent (SGD) with a mini-batch size of 128. 
+	 3. All weights were initialized from a zero-centered Normal distribution with standard deviation 0.02. 
+	 4. In the LeakyReLU, the slope of the leak was set to 0.2 in all models.
+	 5. we used the Adam optimizer (Kingma & Ba, 2014) with tuned hyperparameters, learning rate  0.0002 .
+	 
 
 Evaluation-
-To evaluate the quality of the representations learned by DCGANs for supervised tasks, we train on Imagenet-1k and then use the discriminator’s convolutional features from all layers, maxpooling each layers representation to produce a 4 × 4 spatial grid. These features are then flattened and concatenated to form a 28672 dimensional vector and a regularized linear L2-SVM classifier is trained on top of them
+To evaluate the quality of the representations learned by DCGANs for supervised tasks, we train on Imagenet-1k and then use the discriminator’s convolutional features from all layers, maxpooling each layers representation to produce a 4 × 4 spatial grid. These features are then flattened and concatenated to form a 28672 dimensional vector and a regularized linear L2-SVM classifier is trained on top of them.(This repo does not have validation implementation)
 
 ### Model Architecture
 
