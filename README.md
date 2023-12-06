@@ -40,6 +40,8 @@ To evaluate the quality of the representations learned by DCGANs for supervised 
 ![](dcgan_generator.png)
 
 
+## Dataset
+A small file of dataset is uploaded containing 100 images.
 
 ## Training Loop
 
